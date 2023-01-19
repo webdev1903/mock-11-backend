@@ -9,16 +9,6 @@ app.use(cors());
 
 app.use("", userController);
 
-app.use(express.static(path.join(__dirname, "./client/dist")));
-app.get("*", function (_, res) {
-  res.sendFile(
-    path.join(__dirname, "./client/dist/index.html"),
-    function (err) {
-      res.status(500).send(err);
-    }
-  );
-});
-
 app.listen(3000, async () => {
   try {
     await connect();
