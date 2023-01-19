@@ -9,10 +9,10 @@ app.use(cors());
 
 app.use("", userController);
 
-app.listen(3000, async () => {
+app.listen(process.env.PORT, async () => {
   try {
     await connect();
-    console.log("listening on port 3000");
+    // console.log("listening on port 3000");
   } catch (error) {
     console.log(error);
   }
